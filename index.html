@@ -129,16 +129,17 @@ var marker = L.marker([41.912161,-87.655670],{
   icon: myIcon
 }).addTo(map).bindPopup("Weed Street Boathouse");
 
-
-
-
-
-var polygon = L.polygon([
-[41.977189,-87.757866]
-[41.977189,-87.750628]
-[41,971707,-87.757866]
-[41.971707,-87.750628]
-]).addTo(map);bindPopup("My Neighborhood")
+	
+	
+	
+var circle = L.circle([41.973980, -87.753970],{
+  color: 'black',
+  fillColor: 'skyblue',
+  fillOpacity: 1,
+  radius: 500,
+}).addTo(map).bindPopup("My House");
+	
+	
 
 
 var line = L.polyline([
