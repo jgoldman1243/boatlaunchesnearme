@@ -1,0 +1,48 @@
+body{
+	background-image: url(river.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: darkgrey;
+	color: black;
+}
+
+p{
+	text-size:50pt;
+	width: 750px;
+	text-align: left;
+	margin: auto;
+}
+
+.intro {
+	width: 1000px;
+	margin: auto;
+}
+
+.intro h1{
+	font-family: 'Josefin Sans', sans-serif;
+	text-align:center;
+	font-size:50pt;
+}
+
+.intro h3{
+	font-family: 'Josefin Sans', sans-serif;
+	text-align:center;
+	font-size:30pt;
+}
+
+.bodytext{
+	font-family: 'Josefin Sans', sans-serif;
+	text-align:center;
+	font-size:18pt;
+	width: 800px;
+	margin: auto;
+}
+
+#map {
+	width:900px;
+	height:700px;
+	margin: auto;
+}
+
+

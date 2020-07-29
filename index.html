@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Boat Launches Near My House</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap" rel="stylesheet">
+
+
+<!--Leaflet map links -->
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+
+<script src="js/leaflet-providers.js"></script>
+
+
+</head>
+
+<body>
+
+
+<div class = "intro">
+	<h1>How Many Boat Launches Are Near My House?</h1>
+	<h3>This page is dedicated to mapping boat launches in close proximity to my 
+	house in Jefferson Park.</h3>
+
+</div>
+
+
+
+<div class = "bodytext">
+	
+	<p>Although I have never owned a boat. It would be nice to have one. If I had a boat, I would probably like to go someplace nearby. Mapped below are boat launches and ramps within a 10 mile radius of my home in Jefferson Park, Chicago. </p>
+
+<br></br>
+
+	<p>If you would like to give me a boat, please contact me at <a href = "mailto: jlgoldm@uic.edu">jlgoldm@uic.edu</a>!</p>
+
+</div>
+
+<br></br>
+
+
+<div id = "map"></div>
+
+<script>
+
+var map = L.map('map').setView([41.973980, -87.753970], 11);
+
+// add a base layer 
+var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	maxZoom: 17,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+}).addTo(map);
+
+//add circle point to map and change the size/style
+var circle = L.circle([41.973980, -87.753970],{
+	color: 'pink',
+  fillColor: '#f03',
+  fillOpacity: 0.25,
+  radius: 16500,
+}).addTo(map).bindPopup("10 Mile Radius from 'My House'");
+
+//create a variable that pulls in a new icon image
+var myIcon = L.icon({
+    iconUrl: 'boat.png',
+    iconSize: [40, 40],
+});
+
+//create markers & give it the icon we created
+var marker = L.marker([41.95397,-87.85629
+],{
+	icon: myIcon
+}).addTo(map).bindPopup("Irving Park Road Canoe Landing");
+
+
+var marker = L.marker([42.071613,-87.873510
+],{
+  icon: myIcon
+}).addTo(map).bindPopup("Beck Lake Boat Launch");
+
+var marker = L.marker([42.052931,-87.874919],{
+  icon: myIcon
+}).addTo(map).bindPopup("Big Bend Lake Boat Ramp");
+
+var marker = L.marker([42.040410,-87.881858],{
+  icon: myIcon
+}).addTo(map).bindPopup("Northwestern Woods Canoe Landing");
+
+var marker = L.marker([41.995191,-87.710025],{
+  icon: myIcon
+}).addTo(map).bindPopup("North Chicago River Kayak Launch");
+
+var marker = L.marker([42.046881,-87.672036],{
+  icon: myIcon
+}).addTo(map).bindPopup("Church Street Power Boat Ramp");
+
+var marker = L.marker([42.114511,-87.773100],{
+  icon: myIcon
+}).addTo(map).bindPopup("Tower Road Boat Launch");
+
+var marker = L.marker([42.121957,-87.730155],{
+  icon: myIcon
+}).addTo(map).bindPopup("Lloyd Park/Boat Launch");
+
+var marker = L.marker([41.936358,-87.629206],{
+  icon: myIcon
+}).addTo(map).bindPopup("Chicago Boat Launch");
+
+var marker = L.marker([41.841278,-87.687210],{
+  icon: myIcon
+}).addTo(map).bindPopup("Chicago Boat Launch Motoried");
+
+
+
+var circle = L.circle([41.973980, -87.753970],{
+	color: 'black',
+	fillColor: 'red',
+	fillOpacity: 1,
+	radius: 500,
+}).addTo(map).bindPopup("My House")
+
+
+
+</script>
+</div>
+
+
+
+
+<div id = "map"></div>
+
+<script>
+
+// initialize your map here
+
+var map = L.map('map').setView([41.97398, -87.75397], 10);
+
+
+// base layer
+
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
+
+// Area with my house at the center
+
+var circle = L.circle([41.973980, -87.753970],{
+	color: 'red',
+	fillColor: 'nofill',
+	fillOpacity: 0.5,
+	radius: 900,
+}).addTo(map).bindPopup("Boat launches near my house");
+
+// Boat Launch Icon
+
+var myIcon = L.icon({
+	iconUrl: 'boat.png',
+	iconSize: [30, 30],
+});
+
+// Feature Locations
+
+var marker = L.marker([x,y],{
+	icon: myIcon
+}).addTo(map).bindPopup("Boat Launch 01");
+
+var marker = L.marker([x,y],{
+	icon: myIcon
+}).addTo(map).bindPopup("Boat Launch 01");
+
+var marker = L.marker([x,y],{
+	icon: myIcon
+}).addTo(map).bindPopup("FBoat Launch 01"); // etc.
+
+
+</script>
+
+</div>
+
+</body>
+
+</html>
+
+
