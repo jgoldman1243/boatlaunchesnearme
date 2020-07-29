@@ -59,7 +59,10 @@ var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png'
 	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 }).addTo(map);
 
-//add circle point to map and change the size/style
+
+
+
+
 var circle = L.circle([41.973980, -87.753970],{
 	color: 'pink',
   fillColor: '#f03',
@@ -67,13 +70,18 @@ var circle = L.circle([41.973980, -87.753970],{
   radius: 16500,
 }).addTo(map).bindPopup("10 Mile Radius from 'My House'");
 
-//create a variable that pulls in a new icon image
+
+
+
+
+
 var myIcon = L.icon({
     iconUrl: 'boat.png',
     iconSize: [40, 40],
 });
 
-//create markers & give it the icon we created
+
+
 var marker = L.marker([41.95397,-87.85629
 ],{
 	icon: myIcon
@@ -117,81 +125,97 @@ var marker = L.marker([41.841278,-87.687210],{
   icon: myIcon
 }).addTo(map).bindPopup("Chicago Boat Launch Motoried");
 
+var marker = L.marker([41.912161,-87.655670],{
+  icon: myIcon
+}).addTo(map).bindPopup("Weed Street Boathouse");
+
+
 
 
 var circle = L.circle([41.973980, -87.753970],{
-	color: 'black',
-	fillColor: 'red',
-	fillOpacity: 1,
-	radius: 500,
-}).addTo(map).bindPopup("My House")
+  color: 'black',
+  fillColor: 'skyblue',
+  fillOpacity: 1,
+  radius: 500,
+}).addTo(map).bindPopup("My House");
 
 
+
+
+
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [41.95397,-87.85629],
+]).addTo(map).bindPopup("5.4 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [42.071613,-87.873510],
+]).addTo(map).bindPopup("9 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [42.052931,-87.874919],
+]).addTo(map).bindPopup("8.3 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [42.040410,-87.881858],
+]).addTo(map).bindPopup("7.8 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [41.995191,-87.710025],
+]).addTo(map).bindPopup("2.5 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [42.046881,-87.672036],
+]).addTo(map).bindPopup("6.5 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [42.114511,-87.773100],
+]).addTo(map).bindPopup("9.7 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [42.121957,-87.730155],
+]).addTo(map).bindPopup("9.8 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [41.936358,-87.629206],
+]).addTo(map).bindPopup("6.8 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [41.841278,-87.687210],
+]).addTo(map).bindPopup("10 miles away");
+
+var line = L.polyline([
+    [41.973980, -87.753970],
+    [41.912161,-87.655670],
+]).addTo(map).bindPopup("6.8 miles away");
+
+
+var polygon = L.polygon([
+[41.977189,-87.757866]
+[41.977189,-87.750628]
+[41,971707,-87.757866]
+[41.971707,-87.750628]
+]).addTo(map).bindPopup("My Neighborhood");
 
 </script>
 </div>
 
-
-
-
-<div id = "map"></div>
-
-<script>
-
-// initialize your map here
-
-var map = L.map('map').setView([41.97398, -87.75397], 10);
-
-
-// base layer
-
-
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 18,
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken: 'your.mapbox.access.token'
-}).addTo(mymap);
-
-// Area with my house at the center
-
-var circle = L.circle([41.973980, -87.753970],{
-	color: 'red',
-	fillColor: 'nofill',
-	fillOpacity: 0.5,
-	radius: 900,
-}).addTo(map).bindPopup("Boat launches near my house");
-
-// Boat Launch Icon
-
-var myIcon = L.icon({
-	iconUrl: 'boat.png',
-	iconSize: [30, 30],
-});
-
-// Feature Locations
-
-var marker = L.marker([x,y],{
-	icon: myIcon
-}).addTo(map).bindPopup("Boat Launch 01");
-
-var marker = L.marker([x,y],{
-	icon: myIcon
-}).addTo(map).bindPopup("Boat Launch 01");
-
-var marker = L.marker([x,y],{
-	icon: myIcon
-}).addTo(map).bindPopup("FBoat Launch 01"); // etc.
-
-
-</script>
-
+<br></br>
+<div class = "intro">
+	<h3>Thank You!</h3>
 </div>
 
+<br></br>
 </body>
 
 </html>
-
-
